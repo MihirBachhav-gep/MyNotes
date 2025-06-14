@@ -112,12 +112,12 @@ ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
 
 | Day        | Product | Sales | RunningTotal Calculation           | RunningTotal |
 |------------|---------|-------|------------------------------------|--------------|
-| <mark>Monday</mark>    | <mark>Milk</mark>    | <mark>20</mark>    | 20                                 | 20           |
-| <mark>Tuesday</mark>   | <mark>Milk</mark>    | <mark>15</mark>    | 20 + 15                            | 35           |
-| <mark>Wednesday</mark> | <mark>Milk</mark>    | <mark>25</mark>    | 20 + 15 + 25                       | 60           |
-| <mark>Monday</mark>    | <mark>Bread</mark>   | <mark>5</mark>     | 5                                  | 5            |
-| <mark>Tuesday</mark>   | <mark>Bread</mark>   | <mark>6</mark>     | 5 + 6                              | 11           |
-| <mark>Wednesday</mark> | <mark>Bread</mark>   | <mark>8</mark>     | 5 + 6 + 8                          | 19           |
+| `Monday`    | `Milk`    | `20`    | 20                                 | 20           |
+| `Tuesday`   | `Milk`    | `15`    | 20 + 15                            | 35           |
+| `Wednesday` | `Milk`    | `25`    | 20 + 15 + 25                       | 60           |
+| `Monday`    | `Bread`   | `5`     | 5                                  | 5            |
+| `Tuesday`   | `Bread`   | `6`     | 5 + 6                              | 11           |
+| `Wednesday` | `Bread`   | `8`     | 5 + 6 + 8                          | 19           |
 
 - The **RunningTotal** for each row is the sum of all `Sales` values for the same `Product` from the start of the partition up to the current row.
 - The highlighted rows show which data is included in the calculation for each step.
@@ -299,8 +299,8 @@ Output:
 | 3  | 2025-06-02 | Tablet  | Chicago     | 400   | 1         |
 | 6  | 2025-06-03 | Tablet  | Los Angeles | 420   | 2         |
 | 8  | 2025-06-04 | Phone   | Chicago     | 780   | 3         |
-| 2  | 2025-06-01 | Phone   | Los Angeles | 850   | <mark>4</mark>         |
-| 5  | 2025-06-03 | Phone   | New York    | 850   | <mark>4</mark>          |
+| 2  | 2025-06-01 | Phone   | Los Angeles | 850   | `4`         |
+| 5  | 2025-06-03 | Phone   | New York    | 850   | `4`          |
 | 4  | 2025-06-02 | Laptop  | Chicago     | 1100  | 6         |
 | 1  | 2025-06-01 | Laptop  | New York    | 1200  | 7         |
 | 7  | 2025-06-04 | Laptop  | Los Angeles | 1250  | 8         |
@@ -337,9 +337,9 @@ Output:
 | 3  | 2025-06-02 | Tablet  | Chicago     | 400   | 1          |
 | 6  | 2025-06-03 | Tablet  | Los Angeles | 420   | 2          |
 | 8  | 2025-06-04 | Phone   | Chicago     | 780   | 3          |
-| 5  | 2025-06-03 | Phone   | New York    | 850   | <mark>4</mark>          |
-| 2  | 2025-06-01 | Phone   | Los Angeles | 850   | <mark>4</mark>        |
-| 4  | 2025-06-02 | Laptop  | Chicago     | 1100  | <mark>5</mark>         |
+| 5  | 2025-06-03 | Phone   | New York    | 850   | `4`          |
+| 2  | 2025-06-01 | Phone   | Los Angeles | 850   | `4`        |
+| 4  | 2025-06-02 | Laptop  | Chicago     | 1100  | `5`         |
 | 1  | 2025-06-01 | Laptop  | New York    | 1200  | 6          |
 | 7  | 2025-06-04 | Laptop  | Los Angeles | 1250  | 7          |
 
